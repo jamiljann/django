@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+    {% block title %} Home{% endblock %}
+    {% block site_css %} 
+        <link rel="stylesheet" href="{% static 'myint/styles/base.css' %}"  />
+    {% endblock %}
+        
+    {% block main_heading %}
+        List of Interfaces in Database
+    {% endblock %}
+
+    {% block header_content %}
+        <p>Device Name    Interface    Descripion        ID         Profile      Type</p>
+    {% endblock %}
+       
+    {% block body %} 
+        <table border="1">
+        {% for x in members %}
+            <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.Router_Name }}</td>
+            <td>{{ x.int_Name }}</td>
+            <td>{{ x.Description }}</td>
+            <td>{{ x.int_ID }}</td>
+            <td>{{ x.IP }}</td>
+            <td>{{ x.Profile }}</td>
+            <td>{{ x.Int_type }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endblock %}

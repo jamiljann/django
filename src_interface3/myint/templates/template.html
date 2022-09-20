@@ -1,0 +1,30 @@
+<h1>Input Customer ID:</h1>
+
+<form action="index/" method="post">
+{% csrf_token %}
+
+
+Interface ID:<br>
+<input name="int_ID">
+<br><br>
+
+
+<input type="submit" value="Submit">
+</form>
+
+
+
+
+<ul>
+    {% for x in members %}
+      <li>Description: {{ x.int_Name }}</li>
+
+      {% if x.int_ID == Submit %}
+            <h3>This is the user. </h3>
+      {% else %}
+            <h3> not find.</h3>
+      {% endif %}
+    
+
+    {% endfor %}
+  </ul>

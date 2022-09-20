@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+    {% block title %} Search ID{% endblock %}
+    {% block site_css %} 
+        <link rel="stylesheet" href="{% static 'myint/styles/base.css' %}"  />
+    {% endblock %}
+        
+    {% block main_heading %}
+        Search ID of a user 
+    {% endblock %}
+
+    {% block header_content %}
+        <p>User ID:</p>
+    {% endblock %}
+       
+    {% block body %} 
+        <form action="index/" method="post">
+            {% csrf_token %}
+
+            <input name="int_ID">
+            <br><br>       
+            
+            <input type="submit" value="Find">
+        </form> 
+    {% endblock %}
+
+
+    

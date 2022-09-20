@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+    {% block title %} About Us{% endblock %}
+    {% block site_css %} 
+        <link rel="stylesheet" href="{% static 'myint/styles/base.css' %}"  />
+    {% endblock %}
+        
+    {% block main_heading %}
+        This Program made by Seyed Jamil Sabbaghi Faragard 
+    {% endblock %}
+
+    {% block header_content %}
+        <p>Linked in: https://www.linkedin.com/in/seyed-jamil-sabbaghi-faragard/ </p>
+    {% endblock %}
+       
+    {% block body %} 
+        This is Body Block.
+    {% endblock %}
+

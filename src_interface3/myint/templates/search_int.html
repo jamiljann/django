@@ -1,0 +1,47 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Search Interface</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{% static 'myint/styles/base.css' %}"  />
+    </head>
+    <body>
+        
+        {% csrf_token %}
+    
+        Interface Name:<br>
+        <input name="int_name">
+        <br><br>
+        <input type="submit" value="Submit">
+
+                <h1>List of Searched Interfaces: </h1>
+                <h3>id  Router Name  Interface Name   Description           ID       IP  Profile   Type </h3>
+
+                <table border="1">
+                {% for x in interfaces %}
+                    {% if x.int_Name == 'GigabitEthernet0/10' %}
+                    <tr>
+                    <td>{{ x.id }}</td>
+                    <td>{{ x.Router_Name }}</td>
+                    <td>{{ x.int_Name }}</td>
+                    <td>{{ x.Description }}</td>
+                    <td>{{ x.int_ID }}</td>
+                    <td>{{ x.IP }}</td>
+                    <td>{{ x.Profile }}</td>
+                    <td>{{ x.Int_type }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+                </table>
+
+
+    </body>
+</html>

@@ -1,0 +1,25 @@
+
+{% load static %}
+
+        
+
+<h1>List of Searched Interfaces: </h1>
+<h3>id  Router Name  Interface Name   Description           ID       IP  Profile   Type </h3>
+
+<table border="1">
+{% for x in interfaces %}
+    {% if x.int_Name == 'GigabitEthernet0/10' %}
+    <tr>
+    <td>{{ x.id }}</td>
+    <td>{{ x.Router_Name }}</td>
+    <td>{{ x.int_Name }}</td>
+    <td>{{ x.Description }}</td>
+    <td>{{ x.int_ID }}</td>
+    <td>{{ x.IP }}</td>
+    <td>{{ x.Profile }}</td>
+    <td>{{ x.Int_type }}</td>
+    </tr>
+    {% endif %}
+{% endfor %}
+</table>
+
